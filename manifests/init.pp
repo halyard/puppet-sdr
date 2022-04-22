@@ -6,6 +6,7 @@ class sdr (
 ) {
   package { [
       'rtl-sdr',
+      'cmake',
   ]: }
 
   vcsrepo { '/opt/rtl_433':
@@ -20,7 +21,9 @@ class sdr (
   }
 
   -> exec { 'cmake .. && make install':
-    cwd    => '/opt/rtl_433/build',
-    unless => '/usr/local/bin/rtl_433 -V 2>&1 | awk \'/rtl_433 version/ { print $3 }\'',
+    path     => '/usr/bin'
+    cwd      => '/opt/rtl_433/build',
+    unless   => '/usr/local/bin/rtl_433 -V 2>&1 | awk \'/rtl_433 version/ { print $3 }\'',
+    requires =>  Package['cmake'],
   }
 }
