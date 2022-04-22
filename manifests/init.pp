@@ -23,10 +23,7 @@ class sdr (
   -> exec { 'cmake .. && make install':
     path    => '/usr/bin',
     cwd     => '/opt/rtl_433/build',
-    unless  => [
-      'test -f /usr/local/bin/rtl_433',
-      '/usr/local/bin/rtl_433 -V 2>&1 | awk \'/rtl_433 version/ { print $3 }\'',
-    ],
+    unless  => 'test -f /usr/local/bin/rtl_433 && /usr/local/bin/rtl_433 -V 2>&1 | awk \'/rtl_433 version/ { print $3 }\'',
     require => Package['cmake'],
   }
 }
