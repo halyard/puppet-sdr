@@ -24,6 +24,6 @@ class sdr (
     path     => '/usr/bin',
     cwd      => '/opt/rtl_433/build',
     unless   => '/usr/local/bin/rtl_433 -V 2>&1 | awk \'/rtl_433 version/ { print $3 }\'',
-    requires =>  Package['cmake'],
+    requires => Package['cmake'],
   }
 }
