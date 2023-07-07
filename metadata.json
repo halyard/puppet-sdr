@@ -1,6 +1,6 @@
 {
   "name": "halyard-sdr",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "author": "Les Aker",
   "license": "MIT",
   "summary": "Configure SDR tools",
