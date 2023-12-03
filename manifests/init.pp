@@ -2,7 +2,7 @@
 #
 # @param rtl_433_version sets the tag of the rtl_433 repo to deploy
 class sdr (
-  String $rtl_433_version = '22.11',
+  String $rtl_433_version = '23.11',
 ) {
   package { [
       'rtl-sdr',
