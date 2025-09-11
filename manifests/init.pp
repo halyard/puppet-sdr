@@ -2,9 +2,9 @@
 #
 # @param rtl_433_version sets the tag of the rtl_433 repo to deploy
 class sdr (
-  String $rtl_433_version = 'ge37c0d78',
+  String $rtl_433_version = 'e37c0d78',
 ) {
-  $version_check = '/usr/local/bin/rtl_433 -V 2>&1 | grep version | cut -d\' \' -f3 | cut -d\'-\' -f3'
+  $version_check = '/usr/local/bin/rtl_433 -V 2>&1 | grep version | cut -d\' \' -f3 | | awk -F\'-g\' \'{print $NF}\''
 
   package { [
       'rtl-sdr',
