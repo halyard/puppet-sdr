@@ -4,7 +4,7 @@
 class sdr (
   String $rtl_433_version = 'e37c0d78',
 ) {
-  $version_check = '/usr/local/bin/rtl_433 -V 2>&1 | grep version | cut -d\' \' -f3 | | awk -F\'-g\' \'{print $NF}\''
+  $version_check = '/usr/local/bin/rtl_433 -V 2>&1 | grep version | cut -d\' \' -f3 | awk -F\'-g\' \'{print $NF}\''
 
   package { [
       'rtl-sdr',
