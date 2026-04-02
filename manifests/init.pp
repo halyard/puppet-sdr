@@ -7,8 +7,8 @@ class sdr (
   $version_check = '/usr/local/bin/rtl_433 -V 2>&1 | grep version | cut -d\' \' -f3 | awk -F\'-g\' \'{print $NF}\''
 
   package { [
-      'rtl-sdr',
-      'cmake',
+    'rtl-sdr',
+    'cmake',
   ]: }
 
   -> vcsrepo { '/opt/rtl_433':
